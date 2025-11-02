@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Setting Knowledge - Smart DDC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1976d2;
+            --primary-dark: #0d47a1;
+            --primary-light: #42a5f5;
+            --accent-color: #64b5f6;
+            --text-light: #e3f2fd;
+            --text-dark: #1a237e;
+            --bg-gradient: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            --chat-bg: rgba(255, 255, 255, 0.97);
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+    .setting-container {
+        width: 95%;
+        max-width: 1000px; 
+        background: var(--chat-bg);
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(25, 118, 210, 0.1), 0 0 30px rgba(25, 118, 210, 0.05);
+        overflow: hidden;
+        padding: 50px 60px; 
+        }
+
+
+        .setting-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
+            background: linear-gradient(90deg, rgba(25, 118, 210, 0.08), rgba(13, 71, 161, 0.08));
+            border-radius: 12px;
+            padding: 12px 16px;
+        }
+
+        .setting-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 1;
+            white-space: nowrap;
+        }
+
+        /* Animasi ikon buku melayang */
+        .setting-title i {
+            font-size: 1.7rem;
+            color: var(--primary-color);
+            animation: floatBook 3s ease-in-out infinite;
+            text-shadow: 0 0 8px rgba(66, 165, 245, 0.4);
+        }
+
+        @keyframes floatBook {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            background: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .info {
+            color: var(--text-dark);
+            background: linear-gradient(120deg, #e3f2fd, #f5f9ff);
+            padding: 15px 18px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .info b {
+            color: var(--primary-dark);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 0.95rem;
+        }
+
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            color: var(--text-dark);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            resize: vertical;
+            min-height: 120px;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        textarea:focus, input[type="text"]:focus {
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.2);
+        }
+
+        button[type="submit"] {
+            padding: 12px 24px;
+            border-radius: 25px;
+            background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(25, 118, 210, 0.3);
+        }
+
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, var(--primary-light), var(--primary-color));
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(25, 118, 210, 0.4);
+        }
+
+        button[type="submit"] i {
+            font-size: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 10px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .setting-container {
+                padding: 25px;
+                border-radius: 15px;
+            }
+            .setting-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .setting-container {
+                padding: 18px;
+                border-radius: 10px;
+            }
+            .setting-title {
+                font-size: 1.3rem;
+            }
+            textarea, input[type="text"] {
+                min-height: 90px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="setting-container">
+        <div class="setting-header">
+            <h1 class="setting-title">
+                <i class="fas fa-book-open"></i>
+                Setting Knowledge – Smart DDC
+            </h1>
+            <a href="{{ url_for('chat') }}" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Kembali ke Chat
+            </a>
+        </div>
+
+        <div class="info">
+            💡 Atur <b>Base Knowledge</b> (prompt sistem) dan <b>Link Referensi</b> (satu per baris).<br>
+            Chatbot <b>Smart DDC</b> akan mengikuti panduan ini untuk menjawab dan melakukan klasifikasi buku secara otomatis.
+        </div>
+
+        <form method="post">
+            <label for="base_knowledge">🧠 Base Knowledge (Prompt Sistem)</label>
+            <textarea name="base_knowledge" id="base_knowledge" rows="8" placeholder="Contoh: Kamu adalah pustakawan digital bernama Smart DDC...">{{ knowledge.base_knowledge }}</textarea>
+            
+            <label for="link_knowledge">🔗 Link Referensi (satu per baris)</label>
+            <textarea name="link_knowledge" id="link_knowledge" rows="4" placeholder="https://contoh.com/artikel1&#10;https://contoh.com/artikel2">{% for l in knowledge.link_knowledge %}{{ l }}{% if not loop.last %}&#10;{% endif %}{% endfor %}</textarea>
+            
+            <button type="submit">
+                <i class="fas fa-save"></i>
+                Simpan Pengaturan
+            </button>
+        </form>
+
+        <footer>
+            &copy; 2025 <a href="https://perpustakaan.stikomelrahma.ac.id/" target="_blank">Smart DDC</a>. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
